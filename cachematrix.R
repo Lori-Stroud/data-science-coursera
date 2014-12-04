@@ -2,9 +2,13 @@
 ## benefit to caching the inverse of a matrix rather than computing it
 ## repeatedly.
 
-## Usage example:
+## You can test these functions by entering the following commands:
+##
+##   source(cachematrix.R)
 ##   M = matrix(c(1, 2, 3, 4), nrow=2, ncol=2)
-##   cacheSolve(makeCacheMatrix(M)))
+##   CM = makeCacheMatrix(M)
+##   cacheSolve(CM))
+##   cacheSolve(CM))   # will print to stderr 'getting cached data'
 
 ## This function creates a special "matrix" object that can cache its inverse.
 
