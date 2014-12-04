@@ -2,6 +2,10 @@
 ## benefit to caching the inverse of a matrix rather than computing it
 ## repeatedly.
 
+## Usage example:
+##   M = matrix(c(1, 2, 3, 4), nrow=2, ncol=2)
+##   cacheSolve(makeCacheMatrix(M)))
+
 ## This function creates a special "matrix" object that can cache its inverse.
 
 makeCacheMatrix <- function(x = matrix()) {
