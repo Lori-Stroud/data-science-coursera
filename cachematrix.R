@@ -4,7 +4,7 @@
 
 ## You can test these functions by entering the following commands:
 ##
-##   source(cachematrix.R)
+##   source("cachematrix.R")
 ##   M = matrix(c(1, 2, 3, 4), nrow=2, ncol=2)
 ##   CM = makeCacheMatrix(M)
 ##   cacheSolve(CM))
