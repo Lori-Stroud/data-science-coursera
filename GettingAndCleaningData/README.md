@@ -15,7 +15,7 @@ A full description is available at the site where the data was obtained:
 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-This dataset represent data collected from the accelerometers from the Samsung Galaxy S smartphone and is part of the following publication:
+This dataset represents data collected from the accelerometers from the Samsung Galaxy S smartphone and is part of the following publication:
 
 > Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz.
 > Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine.
