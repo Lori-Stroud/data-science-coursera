@@ -12,6 +12,7 @@ Each person performed six activities (`activity`)
 * SITTING
 * STANDING
 * LAYING
+
 wearing a smartphone (Samsung Galaxy S II) on the waist.
 
 Using its embedded accelerometer and gyroscope, 3-axial linear acceleration
