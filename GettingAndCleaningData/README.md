@@ -36,11 +36,24 @@ The R script called `run_analysis.R` does the following:
 4. Appropriately labels the data set with descriptive variable names. 
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-It provides the function `get_rawdata()` for downloading the dataset and
+It provides the function `get_rawdata()` for downloading the data set and
 unzipping it in the folder specified by the parameter `destdir`. Just run:
 
 ```r
 source( "./run_analysis.R" )
 get_rawdata( destdir = "./data" )
+
+run_analysis( datadir = ",/data" )
+```
+
+to download the data archive, processing the data, and creating the final tidy
+data set that will be saved in the file named *tidydata.txt*.
+
+The content of this text file can be visualised in RStudio by entering the
+following commands:
+
+```r
+tidydata <- read.table( "tidydata.txt" )
+View( tidy )
 ```
 
