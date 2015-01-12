@@ -42,8 +42,7 @@ unzipping it in the folder specified by the parameter `destdir`. Just run:
 ```r
 source( "./run_analysis.R" )
 get_rawdata( destdir = "./data" )
-
-run_analysis( datadir = ",/data" )
+run_analysis( datadir = "./data" )
 ```
 
 to download the data archive, processing the data, and creating the final tidy
