@@ -79,7 +79,8 @@ run_analysis <- function( datadir = "." ) {
     ## 4. Appropriately labels the data set with descriptive variable names
 
     print( "Appropriately labelling the data set...", quote = FALSE )
-    data$activity <- factor( data$activity, labels = activity_labels[,2] )
+    data$activity <- factor( data$activity,
+                             labels = tolower( activity_labels[,2] ) )
 
     ## 5. From the data set in step 4, creates a second, independent tidy
     ##    data set with the average of each variable for each activity and

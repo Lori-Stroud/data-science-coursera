@@ -6,12 +6,12 @@ The experiments have been carried out with a group of 30 volunteers (`subject`)
 within an age bracket of 19-48 years.
 
 Each person performed six activities (`activity`)
-* WALKING
-* WALKING_UPSTAIRS
-* WALKING_DOWNSTAIRS
-* SITTING
-* STANDING
-* LAYING
+* walking
+* walking_upstairs
+* walking_downstairs
+* sitting
+* standing
+* laying
 
 wearing a smartphone (Samsung Galaxy S II) on the waist.
 
