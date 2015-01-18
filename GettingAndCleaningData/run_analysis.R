@@ -60,14 +60,15 @@ run_analysis <- function( datadir = "." ) {
     test_data <- cbind( test_subject, test_labels, test_set )
     data <- rbind( training_data, test_data )
 
-    colnames( data ) <- c( "subject", "activity", features[,2] )
+    colnames( data ) <- c( "subject", "activity",
+                           sub( "\\(\\)", "", features[,2] ) )
 
     ## 2. Extracts only the measurements on the mean and standard deviation
     ##    for each measurement
 
     print( "Extracting measurements on the mean and standard deviation ...",
            quote = FALSE )
-    data <- data[, grepl( "subject|activity|mean\\(\\)|std\\(\\)",
+    data <- data[, grepl( "subject|activity|mean|std",
                          names( data ) )]
 
     ## 3. Uses descriptive activity names to name the activities in the data set
