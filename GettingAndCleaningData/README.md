@@ -56,3 +56,8 @@ tidydata <- read.table( "tidydata.txt" )
 View( tidy )
 ```
 
+A screenshot follows showing the result:
+
+![alt text][screenshot]
+
+[screenshot]: https://github.com/madrisan/data-science-coursera/blob/master/GettingAndCleaningData/images/rstudio-project-screenshot.png
