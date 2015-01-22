@@ -6,3 +6,6 @@ Repos for the Coursera Data Science Assignemnts and Projects:
 * R Programming
 * Getting and Cleaning Data
 
+For more info see the [official website][1]
+
+[1]: https://www.coursera.org/specialization/jhudatascience/1
