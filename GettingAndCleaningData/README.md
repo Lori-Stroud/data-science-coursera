@@ -53,7 +53,7 @@ following commands:
 
 ```r
 tidydata <- read.table( "tidydata.txt" )
-View( tidy )
+View( tidydata )
 ```
 
 A screenshot follows showing the result:
