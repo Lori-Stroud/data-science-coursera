@@ -82,6 +82,8 @@ Data set variables:
 * tBodyGyroJerkMag-mean
 * tBodyGyroJerkMag-std
 
+All the variables are normalized and in the range [-1, 1].
+
 Finally a Fast Fourier Transform (*FFT*) was applied to some of these signals
 producing *fBodyAcc-XYZ*, *fBodyAccJerk-XYZ*, *fBodyGyro-XYZ*,
 *fBodyAccJerkMag*, *fBodyGyroMag*, *fBodyGyroJerkMag*.
@@ -120,3 +122,4 @@ Data set variables:
 * fBodyBodyGyroJerkMag-mean
 * fBodyBodyGyroJerkMag-std
 
+All the variables are normalized and in the range [-1, 1].
