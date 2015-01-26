@@ -3,7 +3,7 @@
 ## Variable used in the data sets
 
 The experiments have been carried out with a group of 30 volunteers (`subject` in the R script)
-within an age bracket of 19-48 years.
+within an age bracket of 19-48 years. The subjects are numbered from 1 to 30 in the data set.
 
 Each person performed six activities (`activity` in the R script)
 * walking
@@ -39,7 +39,7 @@ Also the magnitude of these three-dimensional signals were calculated using the
 Euclidean norm (*tBodyAccMag*, *tGravityAccMag*, *tBodyAccJerkMag*, 
 *tBodyGyroMag*, *tBodyGyroJerkMag*). 
 
-Data set variables:
+We just take into account the measurements on the mean and standard deviation:
 
 * tBodyAcc-mean-X
 * tBodyAcc-mean-Y
@@ -82,7 +82,7 @@ Data set variables:
 * tBodyGyroJerkMag-mean
 * tBodyGyroJerkMag-std
 
-All the variables are normalized and in the range [-1, 1].
+Features are normalized and bounded within [-1,1].
 
 Finally a Fast Fourier Transform (*FFT*) was applied to some of these signals
 producing *fBodyAcc-XYZ*, *fBodyAccJerk-XYZ*, *fBodyGyro-XYZ*,
@@ -122,4 +122,4 @@ Data set variables:
 * fBodyBodyGyroJerkMag-mean
 * fBodyBodyGyroJerkMag-std
 
-All the variables are normalized and in the range [-1, 1].
+Again, all the features are normalized and bounded within [-1,1].
