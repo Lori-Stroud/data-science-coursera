@@ -1,13 +1,14 @@
 plot3 <- function()
 {
     print( "Plotting the image #3..." )
+
     data <- getdata( destdir = "./data" )
     data[, "DateTime"] <- as.POSIXct( paste( data$Date, data$Time ) )
 
     # switch to english (disable automatic translations)
     Sys.setlocale("LC_TIME", "C");
 
-    par( mar=c( 5, 6, 4, 4 ) )
+    par( mar = c( 5, 6, 4, 4 ) )
     with( data, {
           plot( Sub_metering_1 ~ DateTime, type = "l",
                 xlab = "", ylab = "Energy sub metering" )

@@ -27,13 +27,19 @@ get_datafile <- function( destdir = "." )
     archive_info
 }
 
+## Load the data set (CSV format) and returns the dataframe 'data'
+
 load_datafile <- function( datafile, fromDate, toDate )
 {
     data <- read.csv( datafile, sep = ';', na.string = ';',
                       stringsAsFactor = FALSE )
+
     data$Date <- as.Date( data$Date, format = "%d/%m/%Y" )
     data <- subset( data, subset = ( Date >= fromDate & Date <= toDate ) )
 }
+
+## Helper function that downloads and unzipps the Electric Power Consumption
+## data set and return the required dataframe
 
 getdata <- function( destdir = "." )
 {
@@ -41,6 +47,8 @@ getdata <- function( destdir = "." )
 
     print( "Loading the CSV file..." )
     datafile <- paste( destdir, archive_info$Name, sep = '/' )
+
+    # select the data from the dates 2007-02-01 and 2007-02-02
     fromDate <- "2007-02-01"; toDate <- "2007-02-02"
     data <- load_datafile( datafile, fromDate, toDate )
 }
