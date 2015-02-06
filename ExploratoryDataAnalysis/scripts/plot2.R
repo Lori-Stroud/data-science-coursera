@@ -1,12 +1,12 @@
 plot2 <- function()
 {
-    print( "Plotting the image #2..." )
-
     # switch to english (disable automatic translations)
     Sys.setlocale("LC_TIME", "C");
 
     data <- getdata( destdir = "./data" )
     data[, "DateTime"] <- as.POSIXct( paste( data$Date, data$Time ) )
+
+    print( "Plotting the image #2...", quote = FALSE )
 
     par( mar=c( 5, 6, 4, 4 ) )
     plot( data$Global_active_power ~ data$DateTime,

@@ -2,6 +2,8 @@ plot1 <- function()
 {
     data <- getdata( destdir = "./data" )
 
+    print( "Plotting the image #1...", quote = FALSE )
+
     hist( data$Global_active_power,
           main = "Global Active Power",
           xlab = "Global Active Power (kilowatts)", ylab = "Frequency",

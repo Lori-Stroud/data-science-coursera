@@ -1,12 +1,12 @@
 plot3 <- function()
 {
-    print( "Plotting the image #3..." )
-
     data <- getdata( destdir = "./data" )
     data[, "DateTime"] <- as.POSIXct( paste( data$Date, data$Time ) )
 
     # switch to english (disable automatic translations)
     Sys.setlocale("LC_TIME", "C");
+
+    print( "Plotting the image #3...", quote = FALSE )
 
     par( mar = c( 5, 6, 4, 4 ) )
     with( data, {
