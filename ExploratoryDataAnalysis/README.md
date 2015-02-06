@@ -72,6 +72,15 @@ source( "./scripts/plot3.R" )
 plot3()
 ```
 
+### Plot 4
+
+![alt text][plot4]
+
+```r
+source( "./scripts/plot4.R" )
+plot4()
+```
+
 [1]: http://archive.ics.uci.edu/ml/
 [2]: https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip
 [3]: https://archive.ics.uci.edu/ml/datasets/Individual+household+electric+power+consumption
@@ -79,4 +88,4 @@ plot3()
 [plot1]: https://github.com/madrisan/data-science-coursera/blob/master/ExploratoryDataAnalysis/images/plot1.png
 [plot2]: https://github.com/madrisan/data-science-coursera/blob/master/ExploratoryDataAnalysis/images/plot2.png
 [plot3]: https://github.com/madrisan/data-science-coursera/blob/master/ExploratoryDataAnalysis/images/plot3.png
-
+[plot4]: https://github.com/madrisan/data-science-coursera/blob/master/ExploratoryDataAnalysis/images/plot4.png
