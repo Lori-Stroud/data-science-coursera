@@ -31,7 +31,7 @@ get_datafile <- function( destdir = "." )
 
 load_datafile <- function( datafile, fromDate, toDate )
 {
-    data <- read.csv( datafile, sep = ';', na.string = ';',
+    data <- read.csv( datafile, sep = ';', na.string = '?',
                       stringsAsFactor = FALSE )
 
     data$Date <- as.Date( data$Date, format = "%d/%m/%Y" )
