@@ -16,9 +16,12 @@ get_datafile <- function( destdir = "." )
         dir.create( destdir )
 
     print( "Downloading data...", quote = FALSE )
-    download.file( weburl, ziparchive, "curl", quiet = TRUE )
-    if ( !file.exists( ziparchive ) )
-        stop( "Cannot download the zip archive... aborting" )
+
+    switch( Sys.info()[[ 'sysname' ]],
+            Windows = { download_method = "internal" },
+            { download_method = "curl" }
+    )
+    download.file( weburl, ziparchive, download_method, quiet = TRUE )
 
     print( "Uncompressing the archive..", quote = FALSE )
     archive_info <- unzip( ziparchive, exdir = destdir, list = TRUE )

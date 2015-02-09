@@ -8,7 +8,7 @@ plot4 <- function()
 
     print( "Plotting the image #4...", quote = FALSE )
     
-    par( mfrow = c(2, 2), mar = c(4, 5, 3, 2), cex = 0.75 )
+    par( mfrow = c(2, 2), mar = c(4, 5, 3, 2), cex = 1 )
     with( data, {
         plot( data$Global_active_power ~ data$DateTime,
               type = "l",
@@ -28,6 +28,6 @@ plot4 <- function()
               xlab = "datetime", ylab = "Global_reactive_power" )        
     })
 
-    dev.copy( png, file = "plot4.png", height = 480, width = 480)
+    dev.copy( png, file = "plot4.png", height = 504, width = 504)
     dev.off()
 }
