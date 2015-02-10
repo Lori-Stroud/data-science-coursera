@@ -26,10 +26,11 @@ get_datafiles <- function( destdir = "." )
     if ( !file.exists( ziparchive ) )
         stop( "Cannot download the zip archive... aborting" )
 
-    print( "Uncompressing the archive..", quote = FALSE )
-    archive_info <- unzip( ziparchive, exdir = destdir, list = TRUE )
-    #file.remove( ziparchive )
+    print( "Uncompressing the archive...", quote = FALSE )
+    archive_info <- unzip( ziparchive, exdir = destdir )
+    file.remove( ziparchive )
 
+    print( "Extracted files...", quote = FALSE )
     archive_info
 }
 
@@ -41,7 +42,7 @@ get_datafiles <- function( destdir = "." )
 
 load_SCC_data <- function( datadir = "." )
 {
-    print( "Loading the Source Classification Code Table ...", quote = FALSE )
+    print( "Loading the Source Classification Code Table...", quote = FALSE )
     SCCdbfile <- paste( datadir, "Source_Classification_Code.rds", sep = '/' )
     SCC <- readRDS(SCCdbfile)
 }
@@ -54,7 +55,7 @@ load_SCC_data <- function( datadir = "." )
 
 load_NEI_data <- function( datadir = "." )
 {
-    print( "Loading the PM2.5 Emissions Data ...", quote = FALSE )
+    print( "Loading the PM2.5 Emissions Data...", quote = FALSE )
     NEIdbfile <- paste( datadir, "summarySCC_PM25.rds", sep = '/' )
     NEI <- readRDS(NEIdbfile)
 }
