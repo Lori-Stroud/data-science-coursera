@@ -6,6 +6,7 @@ Repos for the Coursera Data Science Assignemnts and Projects:
 * R Programming
 * Getting and Cleaning Data
 * Exploratory Data Analysis
+* Reproducible Research
 
 For more info see the [official website][1]
 
