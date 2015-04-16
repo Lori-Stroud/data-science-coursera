@@ -39,7 +39,7 @@ weburl <- "https://github.com/madrisan/data-science-coursera/raw/master/Reproduc
 ziparchive <- "activity.zip"
 switch(Sys.info()[[ 'sysname' ]],
     Windows = {
-            download_method="internal";
+            setInternet2(use=TRUE)
             download.file(weburl, ziparchive, "internal") },
     { download.file(weburl, ziparchive, "curl", extra = c("-L")) }
 )

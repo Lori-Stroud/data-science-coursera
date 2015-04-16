@@ -81,7 +81,7 @@ img {
 ziparchive &lt;- &quot;activity.zip&quot;
 switch(Sys.info()[[ 'sysname' ]],
     Windows = {
-            download_method=&quot;internal&quot;;
+            setInternet2(use=TRUE)
             download.file(weburl, ziparchive, &quot;internal&quot;) },
     { download.file(weburl, ziparchive, &quot;curl&quot;, extra = c(&quot;-L&quot;)) }
 )
@@ -162,8 +162,8 @@ daytype &lt;- function(day) {
 data_fill$daytype &lt;- mapply(daytype, data_fill$date)</code></pre>
 <p>And we end this document by plotting the two resulting datasets:</p>
 <pre class="r"><code>averages &lt;- aggregate(steps ~ interval + daytype, data=data_fill, FUN=mean)
-ggplot(data=averages, aes(x=interval, y=steps))   + 
-       geom_line()                                + 
+ggplot(data=averages, aes(x=interval, y=steps))   +
+       geom_line()                                +
        facet_grid(daytype ~ .)                    +
        ggtitle(&quot;Average daily activity patterns&quot;) +
        xlab(&quot;5-Minute Interval&quot;)                  +

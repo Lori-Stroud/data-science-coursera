@@ -35,7 +35,7 @@ weburl <- "https://github.com/madrisan/data-science-coursera/raw/master/Reproduc
 ziparchive <- "activity.zip"
 switch(Sys.info()[[ 'sysname' ]],
     Windows = {
-            download_method="internal";
+            setInternet2(use=TRUE)
             download.file(weburl, ziparchive, "internal") },
     { download.file(weburl, ziparchive, "curl", extra = c("-L")) }
 )
@@ -209,8 +209,8 @@ And we end this document by plotting the two resulting datasets:
 
 ```r
 averages <- aggregate(steps ~ interval + daytype, data=data_fill, FUN=mean)
-ggplot(data=averages, aes(x=interval, y=steps))   + 
-       geom_line()                                + 
+ggplot(data=averages, aes(x=interval, y=steps))   +
+       geom_line()                                +
        facet_grid(daytype ~ .)                    +
        ggtitle("Average daily activity patterns") +
        xlab("5-Minute Interval")                  +
