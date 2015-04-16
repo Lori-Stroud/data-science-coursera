@@ -1,6 +1,6 @@
-# Reproducible Research: Peer Assessment 1
+# Coursera -- Reproducible Research: Peer Assessment 1
 Davide Madrisan  
-Monday, April 14, 2015  
+Monday, April 16, 2015  
 
 ## Introduction
 
@@ -31,8 +31,10 @@ the unzipped file by ignoring the missing values in the dataset.
 
 
 ```r
-weburl <- "https://github.com/madrisan/data-science-coursera/raw/master/ReproducibleResearch-1/activity.zip"
+website <- "https://github.com/madrisan"
+repository <- "data-science-coursera/raw/master/ReproducibleResearch-1"
 ziparchive <- "activity.zip"
+weburl <- paste(website, repository, ziparchive, sep = "/")
 switch(Sys.info()[[ 'sysname' ]],
     Windows = {
             setInternet2(use=TRUE)
@@ -59,7 +61,8 @@ granularity = diff(range(tot_steps_day$steps)) / 25
 ggplot(data=tot_steps_day, aes(x=tot_steps_day$steps))              +
     geom_histogram(binwidth=granularity, col="black", fill="white") +
     labs(x="Total Steps per Day", y="Count")                        +
-    theme(axis.text=element_text(size=9), axis.title=element_text(size=10, face="italic"))
+    theme(axis.text=element_text(size=8),
+          axis.title=element_text(size=8, face="italic"))
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
@@ -97,7 +100,8 @@ ggplot(data=averages, aes(x=interval, y=steps)) +
     ggtitle("Average daily activity pattern")   +
     xlab("5-Minute Interval")                   +
     ylab("Average Number of Steps Taken")       +
-    theme(axis.text=element_text(size=9), axis.title=element_text(size=10, face="italic"))
+    theme(axis.text=element_text(size=8),
+          axis.title=element_text(size=8, face="italic"))
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
@@ -149,12 +153,14 @@ and report the mean and median values.
 
 
 ```r
-tot_steps_day <- aggregate(steps ~ date, data=data_fill, FUN=sum, na.rm=TRUE, na.action=NULL)
+tot_steps_day <- aggregate(steps ~ date, data=data_fill, FUN=sum,
+                           na.rm=TRUE, na.action=NULL)
 granularity = diff(range(tot_steps_day$steps)) / 25
 ggplot(data=tot_steps_day, aes(x=tot_steps_day$steps))              +
     geom_histogram(binwidth=granularity, col="black", fill="white") +
     labs(x="Total Steps (with imputed missing data)", y="Count")    +
-    theme(axis.text=element_text(size=9), axis.title=element_text(size=10, face="italic"))
+    theme(axis.text=element_text(size=8),
+          axis.title=element_text(size=8, face="italic"))
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-9-1.png) 
@@ -199,7 +205,8 @@ Sys.setlocale("LC_TIME", lctime)
 ```r
 data_fill$date <- as.Date(data_fill$date, "%Y-%m-%d")
 daytype <- function(day) {
-    ifelse(weekdays(day, abbreviate=FALSE) %in% c("Saturday", "Sunday"), "weekend", "weekday")
+    ifelse(weekdays(day, abbreviate=FALSE) %in% c("Saturday", "Sunday"),
+           "weekend", "weekday")
 }
 data_fill$daytype <- mapply(daytype, data_fill$date)
 ```
@@ -215,7 +222,8 @@ ggplot(data=averages, aes(x=interval, y=steps))   +
        ggtitle("Average daily activity patterns") +
        xlab("5-Minute Interval")                  +
        ylab("Number of Steps")                    +
-       theme(axis.text=element_text(size=9), axis.title=element_text(size=10, face="italic"))
+       theme(axis.text=element_text(size=8),
+             axis.title=element_text(size=8, face="italic"))
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-11-1.png) 
